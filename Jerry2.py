@@ -85,7 +85,11 @@ class Network():
     def error_derivative(self, prediction, target):
         return prediction - target
         
-        
+def relu(x):
+    return max(0, x)        
+
+def relu_derivative(x):
+    return 0.0 if x <= 0.0 else 1.0
 
 def sigmoid(x):
     # return x
@@ -101,7 +105,7 @@ def linear(x):
 def linear_derivative(x):
     return 1.0
 
-model = Network([1, 3, 2, 1], "linear")
+model = Network([1, 1], "linear")
 print(model.predict(1.0))
 
 X = []
